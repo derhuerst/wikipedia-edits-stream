@@ -1,0 +1,30 @@
+{
+	"name": "wikipedia-edits-stream",
+	"description": "A live stream of page edits on Wikipedia.",
+	"version": "0.1.0",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"wikipedia", "realtime", "live", "changes", "edits"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/wikipedia-edits-stream",
+	"repository": "derhuerst/wikipedia-edits-stream",
+	"bugs": "https://github.com/derhuerst/wikipedia-edits-stream/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=6"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+		"tape": "^4.6.3",
+		"tap-min": "^1.2.1"
+	},
+	"scripts": {
+		"test": "node test.js | tap-min",
+		"prepublishOnly": "npm test"
+	}
+}
