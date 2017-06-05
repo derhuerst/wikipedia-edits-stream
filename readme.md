@@ -17,6 +17,8 @@ npm install wikipedia-edits-stream
 
 ## Usage
 
+Refer to the [manual on the edits format](https://www.mediawiki.org/wiki/Manual:RCFeed#Properties) for more info.
+
 ```js
 const edits = require('.')
 
