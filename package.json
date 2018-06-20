@@ -1,13 +1,17 @@
 {
 	"name": "wikipedia-edits-stream",
 	"description": "A live stream of page edits on Wikipedia.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"main": "index.js",
 	"files": [
 		"index.js"
 	],
 	"keywords": [
-		"wikipedia", "realtime", "live", "changes", "edits"
+		"wikipedia",
+		"realtime",
+		"live",
+		"changes",
+		"edits"
 	],
 	"author": "Jannis R <mail@jannisr.de>",
 	"homepage": "https://github.com/derhuerst/wikipedia-edits-stream",
