@@ -1,25 +1,29 @@
 'use strict'
 
-const passthrough = require('readable-stream/passthrough')
+const {Readable} = require('stream')
 const EventSource = require('eventsource')
 
 const endpoint = 'https://stream.wikimedia.org/v2/stream/recentchange'
 
 const edits = () => {
 	// todo: close src if stream gets closed
-	const out = passthrough({objectMode: true})
+	const out = Readable({
+		objectMode: true,
+		read: () => {}
+	})
 
 	const src = new EventSource(endpoint)
 	src.onmessage = (msg) => {
 		try {
 			const data = JSON.parse(msg.data)
-			out.write(data)
+			out.push(data)
 		} catch (err) {
-			out.emit('error', err)
+			out.destroy(err)
 		}
 	}
-	src.onerror = (err) => out.emit('error', err)
+	src.onerror = err => out.destroy(err)
 
+	out.on('close', () => src.close())
 	out.close = () => src.close()
 
 	return out
